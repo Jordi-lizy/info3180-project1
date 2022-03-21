@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%block main%}
+<div class="aprop box-shadow">
+    <div class="aprop_img">
+        <img src="{{url_for('get_image', filename=property.photo)}}">
+    </div>
+    <div class="aprop_info">
+        <h2>{{property.title}}</h2>
+        <div>
+            <p class="prop-price price">${{property.price}}</p>
+            <p class="prop-price ptype">{{property.ptype}}</p>
+        </div>
+        <p>{{property.description}}</p>
+        <div class="room_shower">
+            <span class="room">
+                <img src="{{url_for('static',filename='bed.png')}}">
+                <p>{{property.numofbedrooms}} Bedrooms</p>
+            </span>
+            <span class="room">
+                <img src="{{url_for('static',filename='shower.png')}}">
+                <p>{{property.numofbathrooms}} Bathrooms</p>
+            </span>
+        </div>
+        <div class="location">
+            <img src="{{url_for('static', filename='location.png')}}">
+            <p>{{property.location}}</p>
+        </div>
+        
+        <button class="btn btn-success">Email Realtor</button>
+    </div>
+</div>
+{%endblock%}

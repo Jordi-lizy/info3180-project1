@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{%block main%}
+
+<h1>Add New Property</h1>
+<div class="add_div">
+    <form action="{{url_for('newproperty')}}" method="POST" enctype="multipart/form-data">
+        {{form.csrf_token}}
+        <div class="property-form">
+            {{form.title.label}}
+            {{form.title (class='form-control')}}
+        </div>
+        <div class="property-form">
+            {{form.description.label}}
+            {{form.description (class='form-control')}}
+        </div>
+        <div class="display_grid">
+            <div class="property-form">
+                {{form.numofbedrooms.label}}
+                {{form.numofbedrooms (class='form-control')}}
+            </div>
+            <div class="property-form">
+                {{form.numofbathrooms.label}}
+                {{form.numofbathrooms (class='form-control')}}
+            </div>
+            <div class="property-form">
+                {{form.price.label}}
+                {{form.price (class='form-control')}}
+            </div>
+            <div class="property-form">
+                {{form.ptype.label}}
+                {{form.ptype (class='form-control')}}
+            </div>
+        </div>
+        <div class="property-form">
+            {{form.location.label}}
+            {{form.location (class='form-control')}}
+        </div>
+        <div class="property-form">
+            {{form.photo.label}}
+            {{form.photo (class='form-control')}}
+        </div>
+        <button name="submit" type="submit" class="btn btn-primary">Add Property</button>
+    </form>
+</div>
+{%endblock%}
